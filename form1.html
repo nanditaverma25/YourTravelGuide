@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    
+<head>
+    <link rel="shortcut icon" type="image" href="ytg-favicon.ico">
+    <title>Feedback Form</title>
+    <link rel="stylesheet" href="form.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        body {
+        background-image: url("mainpage-bg.png");
+        background-attachment: fixed;
+        background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+<script>
+function validateform(){
+    var name=document.myform.name.value;
+    var email=document.myform.email.value;
+    var feedback=document.myform.feedback.value;
+    
+    if (name==null || name==""){
+        alert("Name cannot be blank.")
+        return false;
+    }
+
+    if (email==null || email==""){
+        alert("E-mail cannot be blank.")
+        return false;
+    }
+
+    if (feedback==null || feedback==""){
+        alert("Feedback cannot be blank.")
+        return false;
+    }
+}
+</script>
+
+<div class="topnav">
+    <a style="font-size: 25px; color: tomato; background-color: gray; border-style: solid; border-width: 1px; border-color: white;font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">YTG <span style="font-size: 18px; color: white;">Your Travel Guide</span></a>
+    <a href="YourTravelGuide.html">Home</a>
+    <a href="About.html">About</a>
+    <a href="Contact.html">Contact</a>
+    <a class="active" href="form1.html">Feedback</a>
+    <div class="search-container">
+        <form>
+            <input type="text" placeholder="Search Here.." name="search">
+            <button type="submit" style="font-size: 12px; color:black; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">GO!</button>
+        </form>
+    </div>
+</div>
+
+<div class="container">
+    <form name="myform" action="thankyou.html" onsubmit="return validateform()">
+        <label for="name"><b>Name:</b></label><br>
+        <input type="text" id="name" name="name" placeholder="Enter your Name here.."><br><br>
+
+        <label for="email"><b>E-mail ID:</b></label><br>
+        <input type="email" id="email" name="email" placeholder="Enter your E-mail here.."><br><br>
+
+        <label for="feedback"><b>Feedback:</b></label><br>
+        <textarea id="feedback" name="feedback" placeholder="Give us your feedback here.." style="height:200px; width:950px; font-family: Arial, Helvetica, sans-serif;"></textarea><br><br>
+      
+        <input id="submit" type="submit" value="Submit!"><br><br>
+    </form>
+</div>
+
+</html>
